@@ -1,15 +1,24 @@
 import pandas as pd
 import numpy as np
+from datasets import load_dataset
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.preprocessing import LabelEncoder
-from sklearn.feature_extraction.text import TfidfVectorizer # 텍스트 패킷 처리를 위해 추가
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # 1. 데이터 불러오기
 print("데이터를 불러오는 중입니다...")
-splits = {'train': 'train.csv', 'test': 'test.csv'}
-df = pd.read_csv("hf://datasets/rdpahalavan/network-packet-flow-header-payload/" + splits["train"])
+from datasets import load_dataset
+
+print("전체 데이터를 HuggingFace에서 불러오는 중입니다...")
+
+dataset = load_dataset(
+    "rdpahalavan/network-packet-flow-header-payload",
+    split="train"
+)
+
+df = dataset.to_pandas()
 
 print(f"데이터 로드 완료! 데이터 형태: {df.shape}")
 print("현재 컬럼 목록:", df.columns.tolist())
@@ -33,7 +42,7 @@ print(f"탐지할 공격 유형들: {le.classes_}")
 # TF-IDF를 사용하여 패킷 문자열 내에서 자주 등장하는 중요한 패턴 100개를 추출합니다.
 # (컴퓨터 성능이 좋다면 max_features를 500이나 1000으로 늘리면 성능이 더 좋아집니다)
 vectorizer = TfidfVectorizer(max_features=100)
-X = vectorizer.fit_transform(df['packet_dat'].astype(str)).toarray() # 메모리 에러 시 .toarray() 대신 희소 행렬 그대로 사용 가능
+X = vectorizer.fit_transform(df['packet_dat'].astype(str))
 
 print(f"전처리 완료! 추출된 X 특성 형태: {X.shape}")
 
