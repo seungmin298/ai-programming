@@ -1,4 +1,5 @@
 # ai-programming #F
+### 패킷 탐지 결과
 | Category (공격 유형) | Precision (정밀도) | Recall (재현율) | F1-Score | Support (데이터 수) |
 | :--- | :---: | :---: | :---: | :---: |
 | Analysis | 0.95 | 0.97 | 0.96 | 377 |
