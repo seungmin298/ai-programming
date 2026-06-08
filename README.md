@@ -1,5 +1,22 @@
-# ai-programming #F
-### 패킷 탐지 결과
+# 🛡️ Network Intrusion Detection using Random Forest
+
+## 📌 Project Overview
+Welcome to the repository for **Team 6**'s final project in the Artificial Intelligence Programming course. This project implements a machine learning model designed to detect and classify various network cyber attacks by analyzing network packet flows and payloads.
+
+## 🗄️ Dataset
+* We utilized the `rdpahalavan/network-packet-flow-header-payload` dataset provided via Hugging Face.
+* The target variable predicted by our model is `attack_cat`.
+
+## 🛠️ Tech Stack & Model Architecture
+* **Libraries:** Python, `pandas`, `numpy`, and `scikit-learn`.
+* **Data Preprocessing:** We applied `TfidfVectorizer` to extract numerical features from the raw string data in the `packet_dat` column.
+* **Classification Model:** The core algorithm is a `RandomForestClassifier` built with 100 estimators (`n_estimators=100`).
+
+## 📊 Model Performance & Results
+Our Random Forest model was evaluated across 24 different attack categories and normal traffic, achieving an overall accuracy of **97%**. 
+
+Below is the detailed classification report:
+
 | Category (공격 유형) | Precision (정밀도) | Recall (재현율) | F1-Score | Support (데이터 수) |
 | :--- | :---: | :---: | :---: | :---: |
 | Analysis | 0.95 | 0.97 | 0.96 | 377 |
@@ -31,4 +48,9 @@
 | **macro avg** | **0.97** | **0.93** | **0.94** | **237,557** |
 | **weighted avg** | **0.97** | **0.97** | **0.97** | **237,557** |
 
+## 🚀 Getting Started
 
+### Prerequisites
+Install the required dependencies to run the model:
+```bash
+pip install pandas numpy scikit-learn
