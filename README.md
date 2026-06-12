@@ -1,7 +1,7 @@
 # 🛡️ Network Intrusion Detection using Random Forest
 
 ## 📌 Project Overview
-Welcome to the repository for **Team 6**'s final project in the Artificial Intelligence Programming course. This project implements a machine learning model designed to detect and classify various network cyber attacks by analyzing network packet flows and payloads.
+Welcome to the repository for **Team F**'s final project in the Artificial Intelligence Programming course. This project implements a machine learning model designed to detect and classify various network cyber attacks by analyzing network packet flows and payloads.
 
 ## 🚀 Getting Started
 
