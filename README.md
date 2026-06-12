@@ -3,6 +3,14 @@
 ## 📌 Project Overview
 Welcome to the repository for **Team 6**'s final project in the Artificial Intelligence Programming course. This project implements a machine learning model designed to detect and classify various network cyber attacks by analyzing network packet flows and payloads.
 
+## 🚀 Getting Started
+
+## Prerequisites
+Install the required dependencies to run the model:
+```bash
+pip install pandas numpy scikit-learn datasets
+```
+
 ## 🗄️ Dataset
 * We loaded the `rdpahalavan/network-packet-flow-header-payload` dataset directly using the Hugging Face `datasets` library.
 * The target variable predicted by our model is `attack_cat`.
@@ -48,9 +56,3 @@ Below is the detailed classification report:
 | **macro avg** | **0.97** | **0.93** | **0.94** | **237,557** |
 | **weighted avg** | **0.97** | **0.97** | **0.97** | **237,557** |
 
-## 🚀 Getting Started
-
-### Prerequisites
-Install the required dependencies to run the model:
-```bash
-pip install pandas numpy scikit-learn datasets
