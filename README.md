@@ -9,6 +9,7 @@ Welcome to the repository for **Team 6**'s final project in the Artificial Intel
 Install the required dependencies to run the model:
 ```bash
 pip install pandas numpy scikit-learn datasets
+python main.py
 ```
 
 ## 🗄️ Dataset
